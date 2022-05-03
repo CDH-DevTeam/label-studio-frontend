@@ -1,15 +1,13 @@
-import nanoid from "nanoid";
+import { customAlphabet } from "nanoid";
 
 /**
  * Unique hash generator
  * @param {number} lgth
  */
-export function guidGenerator(lgth) {
-  let uniqueID = nanoid(10);
+// export const guidGenerator = (length = 10) => nanoid(length);
+export const guidGenerator = (length = 10) => {
+  // const nanoid = customAlphabet("0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ", 10);
+  const nanoid = customAlphabet("0123456789abcdefghijklmnopqrstuvwxyz", 8);
 
-  if (lgth) {
-    uniqueID = nanoid(lgth);
-  }
-
-  return uniqueID;
-}
+  return nanoid(length);
+};
